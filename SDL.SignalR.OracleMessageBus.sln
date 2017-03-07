@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus", "src\Sdl.SignalR.OracleMessageBus\Sdl.SignalR.OracleMessageBus.csproj", "{286E7DED-376D-45A2-A1A6-E2DFC1431360}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB8B4AA0-DB1F-4DFA-817F-582B2B88ED5A}"
+	ProjectSection(SolutionItems) = preProject
+		ServerRun.testsettings = ServerRun.testsettings
+		test.runsettings = test.runsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Tests", "Tests\Sdl.SignalR.OracleMessageBus.Tests\Sdl.SignalR.OracleMessageBus.Tests.csproj", "{99F760DE-2496-4A81-9C13-8D9A27623671}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3112B7DE-0654-4030-B273-FB1026C49169}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{19276FA5-ECFE-4258-87C1-0D36C22EEFDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Client", "samples\Sdl.SignalR.OracleMessageBus.Client\Sdl.SignalR.OracleMessageBus.Client.csproj", "{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Server", "samples\Sdl.SignalR.OracleMessageBus.Server\Sdl.SignalR.OracleMessageBus.Server.csproj", "{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99F760DE-2496-4A81-9C13-8D9A27623671} = {3112B7DE-0654-4030-B273-FB1026C49169}
+		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C} = {19276FA5-ECFE-4258-87C1-0D36C22EEFDF}
+		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19} = {19276FA5-ECFE-4258-87C1-0D36C22EEFDF}
+	EndGlobalSection
+EndGlobal

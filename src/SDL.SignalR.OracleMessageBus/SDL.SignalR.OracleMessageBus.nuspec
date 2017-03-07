@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://www.sdl.com</licenseUrl>
+    <projectUrl>http://www.sdl.com</projectUrl>
+    <iconUrl>http://www.sdl.com</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release of Oracle backplane which supports only single stream.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>SDL, SignalR, AspNetSignalR, Oracle, Backplane</tags>
+  </metadata>
+</package>
