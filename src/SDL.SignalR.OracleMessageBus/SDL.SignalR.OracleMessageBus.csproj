@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="SDL.SignalR.OracleMessageBus.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="install.sql">
