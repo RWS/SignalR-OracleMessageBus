@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Messaging;
+﻿using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Hosting;
 using Owin;
+using System;
 
 namespace Sdl.SignalR.OracleMessageBus.Server
 {
@@ -36,11 +35,7 @@ namespace Sdl.SignalR.OracleMessageBus.Server
                 EnableDetailedErrors = true
             };
 
-            OracleMessageBus messageBus = new OracleMessageBus(GlobalHost.DependencyResolver,
-                new OracleScaleoutConfiguration("Data Source=ORA12101;User Id=kivlevcm2;Password=tridion", false));
-
-            GlobalHost.DependencyResolver.Register(typeof(IMessageBus), () => messageBus);
-
+            GlobalHost.DependencyResolver.UseOracle("Data Source=ORA12101;User Id=testschema;Password=test123");
             app.MapSignalR(hubConfiguration);
         }
     }
