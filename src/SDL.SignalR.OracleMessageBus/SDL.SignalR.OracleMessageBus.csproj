@@ -79,6 +79,7 @@
     <Compile Include="DbOperation\DataRecordExtensions.cs" />
     <Compile Include="DbOperation\DbCommandExtensions.cs" />
     <Compile Include="DbOperation\DbConnectionExtension.cs" />
+    <Compile Include="DependencyResolverExtensions.cs" />
     <Compile Include="Interfaces\IDataParameterExtensions.cs" />
     <Compile Include="Interfaces\ISignalRDbDependency.cs" />
     <Compile Include="Interfaces\ISignalrDbDependencyFactory.cs" />

@@ -16,7 +16,7 @@ namespace Sdl.SignalR.OracleMessageBus
         /// <summary>
         /// Initializes a new instance of the <see cref="OracleScaleoutConfiguration"/> class.
         /// </summary>
-        public OracleScaleoutConfiguration(string connectionString, bool useOracleDependency)
+        public OracleScaleoutConfiguration(string connectionString, bool useOracleDependency = false, int? oracleDependencyPort = null)
         {
             if (string.IsNullOrEmpty(connectionString))
             {
@@ -25,11 +25,6 @@ namespace Sdl.SignalR.OracleMessageBus
 
             ConnectionString = connectionString;
             UseOracleDependency = useOracleDependency;
-        }
-
-        public OracleScaleoutConfiguration(string connectionString, int? oracleDependencyPort = null)
-            : this(connectionString, true)
-        {
             OracleDependencyPort = oracleDependencyPort;
         }
 
