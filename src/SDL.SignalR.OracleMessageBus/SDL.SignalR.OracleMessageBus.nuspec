@@ -6,13 +6,13 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://www.sdl.com</licenseUrl>
+    <licenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</licenseUrl>
     <projectUrl>http://www.sdl.com</projectUrl>
-    <iconUrl>http://www.sdl.com</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial release of Oracle backplane which supports only single stream.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
-    <tags>SDL, SignalR, AspNetSignalR, Oracle, Backplane</tags>
+    <copyright>Copyright 2017</copyright>
+    <tags>SDL,SignalR,Backplane,MessageBus,Oracle</tags>
   </metadata>
 </package>
