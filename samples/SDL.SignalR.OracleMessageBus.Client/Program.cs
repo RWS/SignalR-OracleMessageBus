@@ -8,7 +8,7 @@ namespace Sdl.SignalR.OracleMessageBus.Client
     {
         static void Main(string[] args)
         {
-            HubConnection hubConnection = new HubConnection("http://localhost:8080/");
+            HubConnection hubConnection = new HubConnection("http://localhost:8888/");
             var hubProxy = hubConnection.CreateHubProxy("DummyHub");
             int received = 0;
             int sent = 0;

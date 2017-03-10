@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SDL.SignalR.OracleMessageBus.Server")]
+[assembly: AssemblyTitle("Sdl.SignalR.OracleMessageBus.Server")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SDL.SignalR.OracleMessageBus.Server")]
+[assembly: AssemblyProduct("Sdl.SignalR.OracleMessageBus.Server")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

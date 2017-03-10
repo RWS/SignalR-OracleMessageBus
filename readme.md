@@ -14,6 +14,16 @@ A lot of people are using Oracle as their database of choice, in which case, the
 
 For us as we support both Oracle and SQL Server, we wanted the experience for customers using Oracle the same as customers using SQL Server. Which meant that we needed to create an Oracle backplane.
 
+How To Use
+-------------
+
+ 1. Get the package Sdl.SignalR.OracleMessageBus from nuget.org.
+ 2. Before your `app.MapSignalR` call use
+`GlobalHost.DependencyResolver.UseOracle("Data Source=ORA12101;User Id=testschema;Password=test123");` Replacing the connection string.
+ 3. The package will create the necessary tables if they do not exist already.
+
+You can also enable Oracle Dependency if you want to by specifying additional parameter during the `UseOracle` call.
+
 Branches and Contributions
 -------------
 * master - Represents the latest stable version. This may be a pre-release version
