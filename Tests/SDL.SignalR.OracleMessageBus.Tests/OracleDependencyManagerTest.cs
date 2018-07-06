@@ -2,7 +2,6 @@
 using System.Data;
 using System.Diagnostics;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sdl.SignalR.OracleMessageBus.Tests
@@ -21,14 +20,14 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void AllDependenciesAreUnregisterd()
         {
             var fakeDbDependency = A.Fake<ISignalRDbDependency>();
-            var fakeDbDependencyRemoveRegistrationCall = fakeDbDependency.CallsTo(c => c.RemoveRegistration(null)).WithAnyArguments();
+            var fakeDbDependencyRemoveRegistrationCall = A.CallTo(() => fakeDbDependency.RemoveRegistration(null)).WithAnyArguments();
 
             var fakeDbConnection = A.Fake<IDbConnection>();
-            var fakeDbConnectionOpenCall = fakeDbConnection.CallsTo(c => c.Open());
-            var fakeDbConnectionDisposeCall = fakeDbConnection.CallsTo(c => c.Dispose());
+            var fakeDbConnectionOpenCall = A.CallTo(() => fakeDbConnection.Open());
+            var fakeDbConnectionDisposeCall = A.CallTo(() => fakeDbConnection.Dispose());
 
             var fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            fakeDbProviderFactory.CallsTo(c => c.CreateConnection()).Returns(fakeDbConnection);
+            A.CallTo(() => fakeDbProviderFactory.CreateConnection()).Returns(fakeDbConnection);
             var depManager = new OracleDependencyManager(fakeDbProviderFactory, new TraceSource("ss"));
             depManager.RegisterDependency(fakeDbDependency);
             depManager.RegisterDependency(fakeDbDependency);
@@ -43,16 +42,16 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void ErrorDuringRemovingDependency()
         {
             var fakeDbDependency = A.Fake<ISignalRDbDependency>();
-            var fakeDbDependencyRemoveRegistrationCall = fakeDbDependency.CallsTo(c => c.RemoveRegistration(null)).WithAnyArguments();
+            var fakeDbDependencyRemoveRegistrationCall = A.CallTo(() => fakeDbDependency.RemoveRegistration(null)).WithAnyArguments();
 
             var fakeErrorDbDependency = A.Fake<ISignalRDbDependency>();
-            fakeDbDependency.CallsTo(c => c.RemoveRegistration(null)).WithAnyArguments().Throws(new Exception());
+            A.CallTo(() => fakeDbDependency.RemoveRegistration(null)).WithAnyArguments().Throws(new Exception());
 
             var fakeDbConnection = A.Fake<IDbConnection>();
-            var fakeDbConnectionOpenCall = fakeDbConnection.CallsTo(c => c.Open());
+            var fakeDbConnectionOpenCall = A.CallTo(() => fakeDbConnection.Open());
 
             var fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            fakeDbProviderFactory.CallsTo(c => c.CreateConnection()).Returns(fakeDbConnection);
+            A.CallTo(() => fakeDbProviderFactory.CreateConnection()).Returns(fakeDbConnection);
             var depManager = new OracleDependencyManager(fakeDbProviderFactory, new TraceSource("ss"));
             depManager.RegisterDependency(fakeErrorDbDependency);
             depManager.RegisterDependency(fakeDbDependency);

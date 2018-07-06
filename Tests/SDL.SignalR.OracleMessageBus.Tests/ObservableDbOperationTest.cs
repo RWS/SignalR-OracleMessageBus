@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Oracle.DataAccess.Client;
 
@@ -24,7 +23,7 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Basic_Success()
         {
             var fakeDbBehavior = A.Fake<IDbBehavior>();
-            fakeDbBehavior.CallsTo(c => c.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
+            A.CallTo(() => fakeDbBehavior.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
 
             ObservableDbOperation dbOperation = new ObservableDbOperation(string.Empty, string.Empty, new TraceSource("ss"),
                 fakeDbBehavior,
@@ -53,36 +52,36 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Pooling_Success()
         {
             var fakeDbReader = A.Fake<IDataReader>();
-            var fakeDbReaderReadCall = fakeDbReader.CallsTo(c => c.Read());
+            var fakeDbReaderReadCall = A.CallTo(() => fakeDbReader.Read());
             fakeDbReaderReadCall.ReturnsNextFromSequence(true, true, false);
 
             var fakeEmptyDbReader = A.Fake<IDataReader>();
-            fakeEmptyDbReader.CallsTo(c => c.Read()).Returns(false);
+            A.CallTo(() => fakeEmptyDbReader.Read()).Returns(false);
 
             var fakeDbCommand = A.Fake<IDbCommand>();
-            fakeDbCommand.CallsTo(c => c.ExecuteReader()).ReturnsNextFromSequence(fakeDbReader, fakeEmptyDbReader);
+            A.CallTo(() => fakeDbCommand.ExecuteReader()).ReturnsNextFromSequence(fakeDbReader, fakeEmptyDbReader);
 
             var fakeDbConnection = A.Fake<IDbConnection>();
-            fakeDbConnection.CallsTo(c => c.CreateCommand()).Returns(fakeDbCommand);
-            var fakeDbConnectionDisposeCall = fakeDbConnection.CallsTo(c => c.Dispose());
+            A.CallTo(() => fakeDbConnection.CreateCommand()).Returns(fakeDbCommand);
+            var fakeDbConnectionDisposeCall = A.CallTo(() => fakeDbConnection.Dispose());
 
             var fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            fakeDbProviderFactory.CallsTo(c => c.CreateConnection()).Returns(fakeDbConnection);
+            A.CallTo(() => fakeDbProviderFactory.CreateConnection()).Returns(fakeDbConnection);
 
             var fakeProcessRecordAction = A.Fake<Action<IDataRecord, IDbOperation>>();
-            var fakeProcessRecordActionInvokeCall = fakeProcessRecordAction.CallsTo(c => c.Invoke(null, null)).WithAnyArguments();
+            var fakeProcessRecordActionInvokeCall = A.CallTo(() => fakeProcessRecordAction.Invoke(null, null)).WithAnyArguments();
 
             var fakeDbBehavior = A.Fake<IDbBehavior>();
-            fakeDbBehavior.CallsTo(c => c.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
+            A.CallTo(() => fakeDbBehavior.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
 
             var fakeOracleDependencyManager = A.Fake<IOracleDependencyManager>();
-            var fakeOracleDependencyManagerRegistryDepCall = fakeOracleDependencyManager.CallsTo(c => c.RegisterDependency(null)).WithAnyArguments();
+            var fakeOracleDependencyManagerRegistryDepCall = A.CallTo(() => fakeOracleDependencyManager.RegisterDependency(null)).WithAnyArguments();
 
             var fakeOracleDependencyManagerRemoveRegistrationCall =
-                fakeOracleDependencyManager.CallsTo(c => c.RemoveRegistration(string.Empty)).WithAnyArguments();
+                A.CallTo(() => fakeOracleDependencyManager.RemoveRegistration(string.Empty)).WithAnyArguments();
 
             var fakeSignalrDbDependencyFactory = A.Fake<ISignalrDbDependencyFactory>();
-            var fakeSignalrDbDependencyFactoryCreateDepCall = fakeSignalrDbDependencyFactory.CallsTo(c => c.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
+            var fakeSignalrDbDependencyFactoryCreateDepCall = A.CallTo(() => fakeSignalrDbDependencyFactory.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
 
             ObservableDbOperation dbOperation = new ObservableDbOperation(string.Empty, string.Empty, new TraceSource("ss"),
                 fakeDbBehavior,
@@ -124,8 +123,8 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             public void FireEvent(OracleNotificationType notificationType, OracleNotificationInfo notificationInfo)
             {
                 var notificationArgsFake = A.Fake<ISignalRDbNotificationEventArgs>();
-                notificationArgsFake.CallsTo(c => c.NotificationType).Returns((int)notificationType);
-                notificationArgsFake.CallsTo(c => c.NotificationInfo).Returns((int)notificationInfo);
+                A.CallTo(() => notificationArgsFake.NotificationType).Returns((int)notificationType);
+                A.CallTo(() => notificationArgsFake.NotificationInfo).Returns((int)notificationInfo);
 
                 if (OnChanged != null)
                 {
@@ -143,10 +142,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void DependencyOnChange()
         {
             var fakeOracleDependencyManager = A.Fake<IOracleDependencyManager>();
-            var fakeOracleDependencyManagerRegistryDepCall = fakeOracleDependencyManager.CallsTo(c => c.RegisterDependency(null)).WithAnyArguments();
+            var fakeOracleDependencyManagerRegistryDepCall = A.CallTo(() => fakeOracleDependencyManager.RegisterDependency(null)).WithAnyArguments();
 
             var fakeSignalrDbDependencyFactory = A.Fake<ISignalrDbDependencyFactory>();
-            var fakeSignalrDbDependencyFactoryCreateDepCall = fakeSignalrDbDependencyFactory.CallsTo(c => c.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
+            var fakeSignalrDbDependencyFactoryCreateDepCall = A.CallTo(() => fakeSignalrDbDependencyFactory.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
 
             var fakeSignalrDependency = new FakeSignalrDependency();
             fakeSignalrDbDependencyFactoryCreateDepCall.Returns(fakeSignalrDependency);
@@ -177,10 +176,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void DependencyFault()
         {
             var fakeOracleDependencyManager = A.Fake<IOracleDependencyManager>();
-            var fakeOracleDependencyManagerRegistryDepCall = fakeOracleDependencyManager.CallsTo(c => c.RegisterDependency(null)).WithAnyArguments();
+            var fakeOracleDependencyManagerRegistryDepCall = A.CallTo(() => fakeOracleDependencyManager.RegisterDependency(null)).WithAnyArguments();
 
             var fakeSignalrDbDependencyFactory = A.Fake<ISignalrDbDependencyFactory>();
-            var fakeSignalrDbDependencyFactoryCreateDepCall = fakeSignalrDbDependencyFactory.CallsTo(c => c.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
+            var fakeSignalrDbDependencyFactoryCreateDepCall = A.CallTo(() => fakeSignalrDbDependencyFactory.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
 
             var fakeSignalrDependency = new FakeSignalrDependency();
             fakeSignalrDbDependencyFactoryCreateDepCall.Returns(fakeSignalrDependency);
@@ -208,13 +207,13 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void RemoveRegistrationDependency()
         {
             var fakeOracleDependencyManager = A.Fake<IOracleDependencyManager>();
-            var fakeOracleDependencyManagerRegistryDepCall = fakeOracleDependencyManager.CallsTo(c => c.RegisterDependency(null)).WithAnyArguments();
+            var fakeOracleDependencyManagerRegistryDepCall = A.CallTo(() => fakeOracleDependencyManager.RegisterDependency(null)).WithAnyArguments();
 
             var fakeOracleDependencyManagerRemoveRegistrationCall =
-                fakeOracleDependencyManager.CallsTo(c => c.RemoveRegistration(string.Empty)).WithAnyArguments();
+                A.CallTo(() => fakeOracleDependencyManager.RemoveRegistration(string.Empty)).WithAnyArguments();
 
             var fakeSignalrDbDependencyFactory = A.Fake<ISignalrDbDependencyFactory>();
-            var fakeSignalrDbDependencyFactoryCreateDepCall = fakeSignalrDbDependencyFactory.CallsTo(c => c.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
+            var fakeSignalrDbDependencyFactoryCreateDepCall = A.CallTo(() => fakeSignalrDbDependencyFactory.CreateDbDependency(null, false, 0, false)).WithAnyArguments();
 
             var fakeSignalrDependency = new FakeSignalrDependency();
             fakeSignalrDbDependencyFactoryCreateDepCall.Returns(fakeSignalrDependency);
@@ -270,11 +269,11 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         {
             var fakeOracleDependencyManager = A.Fake<IOracleDependencyManager>();
             var fakeOracleDependencyManagerRegistryDepCall =
-                fakeOracleDependencyManager.CallsTo(c => c.RegisterDependency(null)).WithAnyArguments();
+                A.CallTo(() => fakeOracleDependencyManager.RegisterDependency(null)).WithAnyArguments();
 
             var fakeSignalrDbDependencyFactory = A.Fake<ISignalrDbDependencyFactory>();
             var fakeSignalrDbDependencyFactoryCreateDepCall =
-                fakeSignalrDbDependencyFactory.CallsTo(c => c.CreateDbDependency(null, false, 0, false))
+                A.CallTo(() => fakeSignalrDbDependencyFactory.CreateDbDependency(null, false, 0, false))
                     .WithAnyArguments();
 
             var fakeSignalrDependency = new FakeSignalrDependency();
@@ -318,10 +317,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             
             // Configure IDbBehaviour to issue OracleException during AddOracleDependency
             var fakeDbBehavior = A.Fake<IDbBehavior>();
-            fakeDbBehavior.CallsTo(c => c.AddOracleDependency(null, null))
+            A.CallTo(() => fakeDbBehavior.AddOracleDependency(null, null))
                 .WithAnyArguments()
                 .Throws(new Exception("Hello, World!") );
-            fakeDbBehavior.CallsTo(c => c.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
+            A.CallTo(() => fakeDbBehavior.UpdateLoopRetryDelays).Returns(_updateLoopRetryDelays);
 
             // Define trace source with our listener to collect trace messages
             var traceSource = new TraceSource("ss");
