@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sdl.SignalR.OracleMessageBus.Tests
@@ -16,15 +15,14 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
 
             var fakeDbOperation = A.Fake<IDbOperation>();
             var createDbOperationCall =
-                fakeDbOperationFactory.CallsTo(
-                    f => f.CreateDbOperation("connectionString", "databaseScript", null, fakeDbProviderFactory));
+                A.CallTo(() => fakeDbOperationFactory.CreateDbOperation("connectionString", "databaseScript", null, fakeDbProviderFactory));
             createDbOperationCall.WithAnyArguments().Returns(fakeDbOperation);
 
             OracleInstaller installer = new OracleInstaller("USER ID=TestUser", new TraceSource("ts"), fakeDbProviderFactory, fakeDbOperationFactory);
             installer.Install();
 
             createDbOperationCall.MustHaveHappened(Repeated.Exactly.Once);
-            fakeDbOperation.CallsTo(f => f.ExecuteNonQuery()).MustHaveHappened(Repeated.Exactly.Once);
+            A.CallTo(() => fakeDbOperation.ExecuteNonQuery()).MustHaveHappened(Repeated.Exactly.Once);
         }
     }
 }

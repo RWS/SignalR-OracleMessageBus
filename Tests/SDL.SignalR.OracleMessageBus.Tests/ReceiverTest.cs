@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Threading;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sdl.SignalR.OracleMessageBus.Tests
@@ -14,19 +13,19 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Receive_StartReceiving_Success()
         {
             var fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            var createParameterCall = fakeDbProviderFactory.CallsTo(f => f.CreateParameter());
+            var createParameterCall = A.CallTo(() => fakeDbProviderFactory.CreateParameter());
 
             var fakeDataParameter = A.Fake<IDataParameter>();
-            var fakeDataParameterValueCall = fakeDataParameter.CallsTo(f => f.Value);
+            var fakeDataParameterValueCall = A.CallTo(() => fakeDataParameter.Value);
             fakeDataParameterValueCall.Returns((long?) 1);
             createParameterCall.Returns(fakeDataParameter);
 
             var fakeDbOperation = A.Fake<IDbOperation>();
-            fakeDbOperation.CallsTo(f => f.ExecuteScalar())
+            A.CallTo(() => fakeDbOperation.ExecuteScalar())
                            .Returns((long?)1);
 
             var fakeDbOperationFactory = A.Fake<IDbOperationFactory>();
-            fakeDbOperationFactory.CallsTo(f => f.CreateDbOperation("connStr", "command", new TraceSource("ts"), fakeDbProviderFactory))
+            A.CallTo(() => fakeDbOperationFactory.CreateDbOperation("connStr", "command", new TraceSource("ts"), fakeDbProviderFactory))
                                   .WithAnyArguments()
                                   .Returns(fakeDbOperation);
 
@@ -45,17 +44,15 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             var fakeIdbProviderFactoryOperation = A.Fake<IDbProviderFactory>();
 
             var fakeIDataParameter = A.Fake<IDataParameter>();
-            fakeIDataParameter.CallsTo(c => c.Value).Returns((long)2);
-            var fakeCallsTo = fakeIdbProviderFactoryOperation.CallsTo(c => c.CreateParameter()).Returns(fakeIDataParameter);
+            A.CallTo(() => fakeIDataParameter.Value).Returns((long)2);
+            var fakeCallsTo = A.CallTo(() => fakeIdbProviderFactoryOperation.CreateParameter()).Returns(fakeIDataParameter);
             IOracleReceiver oracleReceiver = new OracleReceiver(string.Empty, true, new TraceSource("ss"), fakeIdbProviderFactoryOperation, A.Fake<IDbOperationFactory>(), FakeiDbOperationFactory );
             IObservableDbOperation fakDbOperation = A.Fake<IObservableDbOperation>();
             var fake =
-                FakeiDbOperationFactory.CallsTo(
-                    c =>
-                        c.ObservableDbOperation(string.Empty, string.Empty, true, new TraceSource("ss"),
+                A.CallTo(() => FakeiDbOperationFactory.ObservableDbOperation(string.Empty, string.Empty, true, new TraceSource("ss"),
                             A.Fake<IDbProviderFactory>())).WithAnyArguments().Returns(fakDbOperation);
            
-            var fakeIObservableDbOperationDispose = fakDbOperation.CallsTo(c => c.Dispose());
+            var fakeIObservableDbOperationDispose = A.CallTo(() => fakDbOperation.Dispose());
             oracleReceiver.GetLastPayloadId();
             oracleReceiver.StartReceivingUpdatesFromDb();
             Thread.Sleep(100);

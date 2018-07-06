@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Collections.Generic;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNet.SignalR.Messaging;
 
@@ -15,10 +14,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Send_EmptyList_Success()
         {
             var fakeDbOperation = A.Fake<IDbOperation>();
-            var executeNonQueryCall = fakeDbOperation.CallsTo(f => f.ExecuteNonQueryAsync());
+            var executeNonQueryCall = A.CallTo(() => fakeDbOperation.ExecuteNonQueryAsync());
 
             var fakeDbOperationFactory = A.Fake<IDbOperationFactory>();
-            fakeDbOperationFactory.CallsTo(f => f.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>()))
+            A.CallTo(() => fakeDbOperationFactory.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>()))
                                   .WithAnyArguments()
                                   .Returns(fakeDbOperation);
 
@@ -32,10 +31,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Send_OneMessage_Success()
         {
             var fakeDbOperation = A.Fake<IDbOperation>();
-            var executeNonQueryCall = fakeDbOperation.CallsTo(f => f.ExecuteNonQueryAsync());
+            var executeNonQueryCall = A.CallTo(() => fakeDbOperation.ExecuteNonQueryAsync());
 
             var fakeDbOperationFactory = A.Fake<IDbOperationFactory>();
-            fakeDbOperationFactory.CallsTo(f => f.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>(), A.Fake<IDataParameter>()))
+            A.CallTo(() => fakeDbOperationFactory.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>(), A.Fake<IDataParameter>()))
                                   .WithAnyArguments()
                                   .Returns(fakeDbOperation);
 
@@ -52,10 +51,10 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
         public void Send_MultipleMessages_Success()
         {
             var fakeDbOperation = A.Fake<IDbOperation>();
-            var executeNonQueryCall = fakeDbOperation.CallsTo(f => f.ExecuteNonQueryAsync());
+            var executeNonQueryCall = A.CallTo(() => fakeDbOperation.ExecuteNonQueryAsync());
 
             var fakeDbOperationFactory = A.Fake<IDbOperationFactory>();
-            fakeDbOperationFactory.CallsTo(f => f.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>(), A.Fake<IDataParameter>()))
+            A.CallTo(() => fakeDbOperationFactory.CreateDbOperation("connStr", "table", new TraceSource("ts"), A.Fake<IDbProviderFactory>(), A.Fake<IDataParameter>()))
                                   .WithAnyArguments()
                                   .Returns(fakeDbOperation);
 
