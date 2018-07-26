@@ -352,7 +352,8 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             task.Wait(TimeSpan.FromMilliseconds(5000));
             source.Cancel();
             Assert.IsNull(task.Exception);
-            Assert.IsNotInstanceOfType(task.Exception, typeof(AggregateException));
+            // Don`t know why it is here
+            // Assert.IsNotInstanceOfType(task.Exception, typeof(AggregateException));
             Assert.IsTrue(fakeListener.Traces.Exists(item => item.StartsWith("Error in SQL receive loop")));
             
         }
