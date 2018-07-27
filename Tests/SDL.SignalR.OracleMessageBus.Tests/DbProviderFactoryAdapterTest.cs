@@ -1,6 +1,5 @@
 ﻿using System.Data.Common;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sdl.SignalR.OracleMessageBus.Tests
@@ -15,7 +14,7 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             DbConnection iDbConnection = A.Fake<DbConnection>();
 
             DbProviderFactoryAdapter dbProviderFactoryAdapter = new DbProviderFactoryAdapter(dbProviderFactory);
-            var fakeDbProviderFactoryAdapter = dbProviderFactory.CallsTo(c => c.CreateConnection());
+            var fakeDbProviderFactoryAdapter = A.CallTo(() => dbProviderFactory.CreateConnection());
 
             fakeDbProviderFactoryAdapter.Returns(iDbConnection);
             dbProviderFactoryAdapter.CreateConnection();

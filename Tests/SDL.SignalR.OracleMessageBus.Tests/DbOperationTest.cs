@@ -2,7 +2,6 @@
 using System.Data;
 using System.Diagnostics;
 using FakeItEasy;
-using FakeItEasy.ExtensionSyntax.Full;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sdl.SignalR.OracleMessageBus.Tests
@@ -16,23 +15,22 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             bool[] dbReaderReads = { true, true, false };
 
             var fakeDbReader = A.Fake<IDataReader>();
-            var fakeDbReaderReadCall = fakeDbReader.CallsTo(c => c.Read());
+            var fakeDbReaderReadCall = A.CallTo(() => fakeDbReader.Read());
             fakeDbReaderReadCall.ReturnsNextFromSequence(dbReaderReads);
 
             var fakeDbCommand = A.Fake<IDbCommand>();
-            fakeDbCommand.CallsTo(c => c.ExecuteNonQuery()).Returns(2);
-            fakeDbCommand.CallsTo(c => c.ExecuteScalar()).Returns(3);
-            fakeDbCommand.CallsTo(c => c.ExecuteReader()).Returns(fakeDbReader);
+            A.CallTo(() => fakeDbCommand.ExecuteNonQuery()).Returns(2);
+            A.CallTo(() => fakeDbCommand.ExecuteScalar()).Returns(3);
+            A.CallTo(() => fakeDbCommand.ExecuteReader()).Returns(fakeDbReader);
 
             var fakeConnection = A.Fake<IDbConnection>();
-            var fakeConnectionDisposeCall = fakeConnection.CallsTo(c => c.Dispose());
-            var fakeConnectionOpenCall = fakeConnection.CallsTo(c => c.Open());
-            fakeConnection
-                .CallsTo(c => c.CreateCommand())
+            var fakeConnectionDisposeCall = A.CallTo(() => fakeConnection.Dispose());
+            var fakeConnectionOpenCall = A.CallTo(() => fakeConnection.Open());
+            A.CallTo(() => fakeConnection.CreateCommand())
                 .Returns(fakeDbCommand);
 
             IDbProviderFactory fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            var createConnectionCall = fakeDbProviderFactory.CallsTo(c => c.CreateConnection());
+            var createConnectionCall = A.CallTo(() => fakeDbProviderFactory.CreateConnection());
             createConnectionCall.Returns(fakeConnection);
 
             DbOperation dbOperation = new DbOperation(string.Empty, string.Empty, new TraceSource("ss"), fakeDbProviderFactory);
@@ -52,16 +50,16 @@ namespace Sdl.SignalR.OracleMessageBus.Tests
             string msg = Guid.NewGuid().ToString("N");
 
             var fakeDbCommand = A.Fake<IDbCommand>();
-            fakeDbCommand.CallsTo(c => c.ExecuteNonQuery()).Throws(new Exception(msg));
-            fakeDbCommand.CallsTo(c => c.ExecuteScalar()).Throws(new Exception(msg));
-            fakeDbCommand.CallsTo(c => c.ExecuteReader()).Throws(new Exception(msg));
+            A.CallTo(() => fakeDbCommand.ExecuteNonQuery()).Throws(new Exception(msg));
+            A.CallTo(() => fakeDbCommand.ExecuteScalar()).Throws(new Exception(msg));
+            A.CallTo(() => fakeDbCommand.ExecuteReader()).Throws(new Exception(msg));
 
             var fakeConnection = A.Fake<IDbConnection>();
-            fakeConnection.CallsTo(c => c.CreateCommand())
+            A.CallTo(() => fakeConnection.CreateCommand())
                 .Returns(fakeDbCommand);
 
             IDbProviderFactory fakeDbProviderFactory = A.Fake<IDbProviderFactory>();
-            var createConnectionCall = fakeDbProviderFactory.CallsTo(c => c.CreateConnection());
+            var createConnectionCall = A.CallTo(() => fakeDbProviderFactory.CreateConnection());
             createConnectionCall.Returns(fakeConnection);
 
             DbOperation dbOperation = new DbOperation(string.Empty, string.Empty, new TraceSource("ss"), fakeDbProviderFactory);
