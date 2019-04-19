@@ -1,3 +1,12 @@
+configuration: Release
 image: Visual Studio 2017
 before_build:
   - nuget restore
+artifacts: 
+- path: 'src\**\$(configuration)\*.nupkg'
+  name: NuGet
+deploy:
+    provider: NuGet
+    api_key:
+      secure: v1YEQ6VGHaxKylTM0UKuIgojyELRgJlfPG/OI4LOrAAa+n74nKEOUzoXXOzKa8Qi
+    skip_symbols: true
