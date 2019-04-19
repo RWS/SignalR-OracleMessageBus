@@ -1,6 +1,6 @@
 using System.Data;
 using System.Threading.Tasks;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Sdl.SignalR.OracleMessageBus
 {

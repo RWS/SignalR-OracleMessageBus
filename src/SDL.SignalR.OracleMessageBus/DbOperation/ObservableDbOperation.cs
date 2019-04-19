@@ -4,7 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Sdl.SignalR.OracleMessageBus
 {

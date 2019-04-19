@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 15.0.26228.4
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus", "src\Sdl.SignalR.OracleMessageBus\Sdl.SignalR.OracleMessageBus.csproj", "{286E7DED-376D-45A2-A1A6-E2DFC1431360}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sdl.SignalR.OracleMessageBus", "src\Sdl.SignalR.OracleMessageBus\Sdl.SignalR.OracleMessageBus.csproj", "{286E7DED-376D-45A2-A1A6-E2DFC1431360}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB8B4AA0-DB1F-4DFA-817F-582B2B88ED5A}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		test.runsettings = test.runsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Tests", "Tests\Sdl.SignalR.OracleMessageBus.Tests\Sdl.SignalR.OracleMessageBus.Tests.csproj", "{99F760DE-2496-4A81-9C13-8D9A27623671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sdl.SignalR.OracleMessageBus.Tests", "Tests\Sdl.SignalR.OracleMessageBus.Tests\Sdl.SignalR.OracleMessageBus.Tests.csproj", "{99F760DE-2496-4A81-9C13-8D9A27623671}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3112B7DE-0654-4030-B273-FB1026C49169}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{19276FA5-ECFE-4258-87C1-0D36C22EEFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Client", "samples\Sdl.SignalR.OracleMessageBus.Client\Sdl.SignalR.OracleMessageBus.Client.csproj", "{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sdl.SignalR.OracleMessageBus.Client", "samples\Sdl.SignalR.OracleMessageBus.Client\Sdl.SignalR.OracleMessageBus.Client.csproj", "{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.SignalR.OracleMessageBus.Server", "samples\Sdl.SignalR.OracleMessageBus.Server\Sdl.SignalR.OracleMessageBus.Server.csproj", "{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sdl.SignalR.OracleMessageBus.Server", "samples\Sdl.SignalR.OracleMessageBus.Server\Sdl.SignalR.OracleMessageBus.Server.csproj", "{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,8 +31,8 @@ Global
 		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{286E7DED-376D-45A2-A1A6-E2DFC1431360}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{99F760DE-2496-4A81-9C13-8D9A27623671}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{99F760DE-2496-4A81-9C13-8D9A27623671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F760DE-2496-4A81-9C13-8D9A27623671}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -51,5 +51,8 @@ Global
 		{99F760DE-2496-4A81-9C13-8D9A27623671} = {3112B7DE-0654-4030-B273-FB1026C49169}
 		{3F3C2EBB-E0D8-4CAF-9C1B-CAC5B0241C4C} = {19276FA5-ECFE-4258-87C1-0D36C22EEFDF}
 		{E4ADC697-E387-4FBB-919C-6C4B2BF0FC19} = {19276FA5-ECFE-4258-87C1-0D36C22EEFDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB7DDD79-421A-4002-8B50-9AF4C2200576}
 	EndGlobalSection
 EndGlobal

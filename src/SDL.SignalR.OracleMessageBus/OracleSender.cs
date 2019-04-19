@@ -3,7 +3,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Messaging;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Sdl.SignalR.OracleMessageBus
 {
