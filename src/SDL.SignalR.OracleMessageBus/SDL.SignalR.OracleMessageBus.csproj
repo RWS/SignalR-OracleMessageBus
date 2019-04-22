@@ -12,9 +12,9 @@
     <Product>Sdl.SignalR.OracleMessageBus</Product>
     <Description>Oracle messaging backplane for scaling out of ASP.NET SignalR applications in a web-farm.</Description>
     <Copyright>Copyright 2017</Copyright>
-    <Version>1.0.42.0</Version>
-    <AssemblyVersion>1.0.42.0</AssemblyVersion>
-    <FileVersion>1.0.42.0</FileVersion>
+    <Version>1.0.43.0</Version>
+    <AssemblyVersion>1.0.43.0</AssemblyVersion>
+    <FileVersion>1.0.43.0</FileVersion>
     <Authors>SDL Group</Authors>
     <PackageIconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</PackageIconUrl>
     <PackageLicenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</PackageLicenseUrl>
