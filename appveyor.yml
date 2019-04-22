@@ -5,8 +5,4 @@ before_build:
 artifacts: 
 - path: 'src\**\$(configuration)\*.nupkg'
   name: NuGet
-deploy:
-    provider: NuGet
-    api_key:
-      secure: v1YEQ6VGHaxKylTM0UKuIgojyELRgJlfPG/OI4LOrAAa+n74nKEOUzoXXOzKa8Qi
-    skip_symbols: true
+
