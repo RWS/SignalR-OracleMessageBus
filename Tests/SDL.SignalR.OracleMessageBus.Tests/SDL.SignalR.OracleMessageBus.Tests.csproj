@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <Configurations>Release</Configurations>
     <RootNamespace>Sdl.SignalR.OracleMessageBus.Tests</RootNamespace>
     <AssemblyName>Sdl.SignalR.OracleMessageBus.Tests</AssemblyName>
@@ -39,9 +39,6 @@
     <ProjectGuid>{99F760DE-2496-4A81-9C13-8D9A27623671}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sdl.SignalR.OracleMessageBus.Tests</RootNamespace>
-    <AssemblyName>Sdl.SignalR.OracleMessageBus.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

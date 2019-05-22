@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <Configurations>Debug;Release</Configurations>
     <RootNamespace>Sdl.SignalR.OracleMessageBus</RootNamespace>
     <AssemblyName>Sdl.SignalR.OracleMessageBus</AssemblyName>
@@ -46,9 +46,6 @@
     <ProjectGuid>{286E7DED-376D-45A2-A1A6-E2DFC1431360}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sdl.SignalR.OracleMessageBus</RootNamespace>
-    <AssemblyName>Sdl.SignalR.OracleMessageBus</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject />
     <SignAssembly>true</SignAssembly>
