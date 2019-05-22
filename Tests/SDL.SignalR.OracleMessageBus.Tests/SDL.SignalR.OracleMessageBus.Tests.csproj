@@ -8,13 +8,10 @@
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>..\..\shared\Sdl.SignalR.OracleMessageBus.snk</AssemblyOriginatorKeyFile>
     <AssemblyTitle>SDL.SignalR.OracleMessageBus.Tests</AssemblyTitle>
-    <Company></Company>
+    <IsPackable>false</IsPackable>
     <Product>SDL.SignalR.OracleMessageBus.Tests</Product>
     <Description></Description>
-    <Copyright>Copyright ©  2016</Copyright>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <!-- PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -6,13 +6,10 @@
     <AssemblyName>Sdl.SignalR.OracleMessageBus.Server</AssemblyName>
     <OutputType>Exe</OutputType>
     <AssemblyTitle>Sdl.SignalR.OracleMessageBus.Server</AssemblyTitle>
-    <Company></Company>
     <Product>Sdl.SignalR.OracleMessageBus.Server</Product>
     <Description></Description>
-    <Copyright>Copyright ©  2016</Copyright>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>

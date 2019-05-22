@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.0.43.0</Version>
+    <AssemblyVersion>1.0.43.0</AssemblyVersion>
+    <FileVersion>1.0.43.0</FileVersion>
+    <Company>SDL Group</Company>
+    <Copyright>Copyright 2017</Copyright>
+    <Authors>SDL Group</Authors>
+    <PackageIconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</PackageIconUrl>
+    <PackageLicenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/sdl/SignalR-OracleMessageBus</PackageProjectUrl>
+    <PackageReleaseNotes>Initial release of Oracle backplane which supports only single stream.</PackageReleaseNotes>
+    <PackageTags>SDL,SignalR,Backplane,MessageBus,Oracle</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+</Project>
