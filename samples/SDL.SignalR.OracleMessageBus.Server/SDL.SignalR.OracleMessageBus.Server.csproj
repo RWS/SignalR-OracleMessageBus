@@ -44,15 +44,15 @@
     <ProjectReference Include="..\..\src\SDL.SignalR.OracleMessageBus\Sdl.SignalR.OracleMessageBus.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.3.0" />
-    <PackageReference Include="Microsoft.AspNet.SignalR.SelfHost" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Owin" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Diagnostics" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Host.HttpListener" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Hosting" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.Security" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Owin.SelfHost" Version="4.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.SelfHost" Version="2.4.1" />
+    <PackageReference Include="Microsoft.Owin" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Diagnostics" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Host.HttpListener" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Hosting" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.Security" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin.SelfHost" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp">
