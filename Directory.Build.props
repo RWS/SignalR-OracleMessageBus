@@ -1,10 +1,10 @@
 <Project>
   <PropertyGroup>
-    <Version>1.0.43.0</Version>
-    <AssemblyVersion>1.0.43.0</AssemblyVersion>
-    <FileVersion>1.0.43.0</FileVersion>
+    <Version>1.0.44.0</Version>
+    <AssemblyVersion>1.0.44.0</AssemblyVersion>
+    <FileVersion>1.0.44.0</FileVersion>
     <Company>SDL Group</Company>
-    <Copyright>Copyright 2017</Copyright>
+    <Copyright>Copyright 2019</Copyright>
     <Authors>SDL Group</Authors>
     <PackageIconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</PackageIconUrl>
     <PackageLicenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</PackageLicenseUrl>
