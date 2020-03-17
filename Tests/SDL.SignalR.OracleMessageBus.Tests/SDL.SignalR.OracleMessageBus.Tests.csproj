@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Configurations>Release</Configurations>
     <RootNamespace>Sdl.SignalR.OracleMessageBus.Tests</RootNamespace>
     <AssemblyName>Sdl.SignalR.OracleMessageBus.Tests</AssemblyName>
@@ -53,12 +53,12 @@
     <ProjectReference Include="..\..\src\SDL.SignalR.OracleMessageBus\Sdl.SignalR.OracleMessageBus.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FakeItEasy" Version="5.1.1" />
+    <PackageReference Include="FakeItEasy" Version="5.5.0" />
     <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-    <PackageReference Include="Oracle.ManagedDataAccess" Version="19.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="19.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Configuration" />
