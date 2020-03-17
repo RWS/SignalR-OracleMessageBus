@@ -1,3 +1,6 @@
+
+![Build Badge](https://ci.appveyor.com/api/projects/status/github/sdl/SignalR-OracleMessageBus?svg=true)
+
 SDL SignalR Oracle backplane
 =====================
 
