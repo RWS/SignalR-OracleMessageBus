@@ -8,11 +8,8 @@
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>..\..\shared\Sdl.SignalR.OracleMessageBus.snk</AssemblyOriginatorKeyFile>
     <AssemblyTitle>Sdl.SignalR.OracleMessageBus</AssemblyTitle>
-    <Company>SDL Group</Company>
     <Product>Sdl.SignalR.OracleMessageBus</Product>
     <Description>Oracle messaging backplane for scaling out of ASP.NET SignalR applications in a web-farm.</Description>
-    <Copyright>Copyright 2017</Copyright>
-    <Authors>SDL Group</Authors>
     <PackageIconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</PackageIconUrl>
     <PackageLicenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/sdl/SignalR-OracleMessageBus</PackageProjectUrl>
