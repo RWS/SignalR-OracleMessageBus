@@ -1,11 +1,11 @@
 <Project>
   <PropertyGroup>
-    <Version>2.0.2.0</Version>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <FileVersion>2.0.2.0</FileVersion>
+    <Version>2.0.3.0</Version>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <FileVersion>2.0.3.0</FileVersion>
     <Authors>RWS Group for and on behalf of its affiliates and subsidiaries</Authors>
     <Company>RWS Group for and on behalf of its affiliates and subsidiaries</Company>
-    <Copyright>Copyright © 2015-2021 All Rights Reserved by the RWS Group for and on behalf of its affiliates and subsidiaries.</Copyright>
+    <Copyright>Copyright © 2015-2022 All Rights Reserved by the RWS Group for and on behalf of its affiliates and subsidiaries.</Copyright>
     <PackageIconUrl>http://dr0muzwhcp26z.cloudfront.net/static/corporate/SDL-logo-2014.png</PackageIconUrl>
     <PackageLicenseUrl>https://community.sdl.com/developers/tridion_developer/w/wiki/864.sdl-web-developer-software-and-distribution-agreement</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/sdl/SignalR-OracleMessageBus</PackageProjectUrl>
